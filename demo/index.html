@@ -8,56 +8,13 @@
 </head>
 <body>
 
-<div class="container">
-	<h1>React.js Radio Group Demo</h1>
-	
-	<form>
-		<p class="h3">How did you hear about us?</p>
-
-		<p class="radio">
-			<label>
-				<input type="radio" name="referrer" value="newspaper">
-				Newspaper
-			</label>
-		</p>
-		<p class="radio">
-			<label>
-				<input type="radio" name="referrer" value="radio">
-				Radio
-			</label>
-		</p>
-		<p class="radio">
-			<label>
-				<input type="radio" name="referrer" value="tv">
-				Television
-			</label>
-		</p>
-		<p class="radio">
-			<label>
-				<input type="radio" name="referrer" value="search">
-				Search Engine
-			</label>
-		</p>
-		<p class="radio">
-			<label>
-				<input type="radio" name="referrer" value="social">
-				Social Media
-			</label>
-		</p>
-		<p class="form-group radio">
-			<label>
-				<input type="radio" name="referrer" value="other">
-				Other
-			</label>
-			<label class="form-inline">
-				Please specify:
-				<input type="text" name="referrer_other">
-			</label>
-		</p>
-
-		<p><input type="submit"></p>
-	</form>
-</div>
+<script src="http://fb.me/react-0.12.2.js"></script>
+<script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
+<script src="../components/Demo.jsx" type="text/jsx"></script>
+<script type="text/jsx">
+var demo = React.createElement(Demo);
+React.render(demo, document.body);
+</script>
 
 </body>
 </html>
