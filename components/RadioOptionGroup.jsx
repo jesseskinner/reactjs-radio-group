@@ -1,12 +1,7 @@
 var RadioOptionGroup = React.createClass({
-	onChange: function (event) {
-		if (this.refs.other) {
-			this.refs.other.forceUpdate();
-		}
-	},
 	render: function () {
 		return (
-			<div onChange={this.onChange}>
+			<div>
 				{this.props.options.map(function (option) {
 					return (
 						<RadioOption value={option.value} key={option.value}>
@@ -15,7 +10,7 @@ var RadioOptionGroup = React.createClass({
 					);
 				})}
 
-				{this.props.other && <RadioOtherOption ref="other"/>}
+				{this.props.other && <RadioOtherOption/>}
 			</div>
 		);
 	}

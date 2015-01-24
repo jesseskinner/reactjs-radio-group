@@ -11,21 +11,11 @@ var RadioOtherOption = React.createClass({
 			checked: input.checked
 		});
 	},
-	componentDidUpdate: function (prevProps, prevState) {
-		var checked = this.refs.input.getDOMNode().checked;
-		
-		if (!checked && prevState.checked !== checked) {
-			this.setState({
-				checked: checked
-			});
-		}
-	},
 	render: function () {
 		return (
 			<p className="form-group radio">
 				<label>
-					<input ref="input" onChange={this.onChange}
-						type="radio" name="referrer" value="other"/>
+					<input onChange={this.onChange} type="radio" name="referrer" value="other"/>
 					Other
 				</label>
 
