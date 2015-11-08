@@ -15,7 +15,7 @@ var RadioOtherOption = React.createClass({
 		});
 	},
 	componentDidUpdate: function (prevProps, prevState) {
-		var input = this.refs.input.getDOMNode();
+		var input = this.refs.input;
 
 		if (prevState.checked !== input.checked) {
 			this.setState({

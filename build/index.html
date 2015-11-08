@@ -8,7 +8,11 @@
 </head>
 <body>
 
-<script src="http://fb.me/react-0.12.2.min.js"></script>
+<div id="demo"></div>
+
+<script src="http://fb.me/react-0.14.2.min.js"></script>
+<script src="http://fb.me/react-dom-0.14.2.min.js"></script>
+
 <script src="Demo.js"></script>
 <script src="RadioOption.js"></script>
 <script src="RadioOtherOption.js"></script>
@@ -16,7 +20,7 @@
 
 <script>
 var demo = React.createElement(Demo);
-React.render(demo, document.body);
+React.render(demo, document.getElementById('demo'));
 </script>
 
 </body>

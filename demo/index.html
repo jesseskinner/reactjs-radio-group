@@ -8,7 +8,11 @@
 </head>
 <body>
 
-<script src="http://fb.me/react-0.12.2.js"></script>
+<div id="demo"></div>
+
+<script src="http://fb.me/react-0.14.2.js"></script>
+<script src="http://fb.me/react-dom-0.14.2.js"></script>
+
 <script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
 <script src="../components/Demo.jsx" type="text/jsx"></script>
 <script src="../components/RadioOption.jsx" type="text/jsx"></script>
@@ -16,7 +20,7 @@
 <script src="../components/RadioOptionGroup.jsx" type="text/jsx"></script>
 
 <script type="text/jsx">
-React.render(<Demo />, document.body);
+ReactDOM.render(<Demo />, document.getElementById('demo'));
 </script>
 
 </body>
