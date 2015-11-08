@@ -12,6 +12,7 @@
 
 <script src="http://fb.me/react-0.14.2.js"></script>
 <script src="http://fb.me/react-dom-0.14.2.js"></script>
+<script src="../node_modules/hoverboard/dist/hoverboard.min.js"></script>
 
 <script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
 <script src="../components/Demo.jsx" type="text/jsx"></script>
@@ -19,8 +20,17 @@
 <script src="../components/RadioOtherOption.jsx" type="text/jsx"></script>
 <script src="../components/RadioOptionGroup.jsx" type="text/jsx"></script>
 
+<script src="../stores/radioOptions.js"></script>
+
 <script type="text/jsx">
-ReactDOM.render(<Demo />, document.getElementById('demo'));
+radioOptions.getState(function (options) {
+	ReactDOM.render(
+		<Demo
+			onCheck={radioOptions.check}
+			options={options} />,
+		document.getElementById('demo')
+	);
+});
 </script>
 
 </body>

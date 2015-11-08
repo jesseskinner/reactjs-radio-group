@@ -5,7 +5,11 @@ function RadioOption(props) {
 		React.createElement(
 			"label",
 			null,
-			React.createElement("input", { type: "radio", name: props.name, value: props.value }),
+			React.createElement("input", { type: "radio",
+				onClick: props.onCheck,
+				checked: props.checked,
+				name: props.name,
+				value: props.value }),
 			props.children
 		)
 	);
@@ -14,5 +18,6 @@ function RadioOption(props) {
 RadioOption.propTypes = {
 	value: React.PropTypes.string.isRequired,
 	name: React.PropTypes.string.isRequired,
+	checked: React.PropTypes.bool.isRequired,
 	children: React.PropTypes.node
 };

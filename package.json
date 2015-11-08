@@ -1,0 +1,26 @@
+{
+  "name": "reactjs-radio-group",
+  "version": "1.0.0",
+  "description": "Demo of implementing a group of radio options with React.js",
+  "main": "index.js",
+  "dependencies": {
+    "babel-cli": "^6.1.2",
+    "babel-preset-react": "^6.1.2",
+    "hoverboard": "^2.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "./node_modules/.bin/babel --presets react components --out-dir build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jesseskinner/reactjs-radio-group.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jesseskinner/reactjs-radio-group/issues"
+  },
+  "homepage": "https://github.com/jesseskinner/reactjs-radio-group#readme"
+}

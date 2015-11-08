@@ -1,28 +1,39 @@
-var RadioOptionGroup = React.createClass({
-	propTypes: {
-		other: React.PropTypes.bool,
-		name: React.PropTypes.string.isRequired,
-		options: React.PropTypes.array.isRequired
-	},
-	onChange: function (event) {
-		if (this.props.other) {
-			this.refs.other.forceUpdate();
-		}
-	},
-	render: function () {
-		var name = this.props.name;
+function RadioOptionGroup(props) {
+	var name = props.name;
 
-		return React.createElement(
-			"div",
-			{ onChange: this.onChange },
-			this.props.options.map(function (option) {
+	return React.createElement(
+		'div',
+		null,
+		props.options.map(function (option) {
+			function onCheck() {
+				props.onCheck(option.value);
+			}
+
+			if (option.value === 'other') {
+				return React.createElement(RadioOtherOption, {
+					key: option.value,
+					name: name,
+					checked: option.checked,
+					onCheck: onCheck });
+			} else {
 				return React.createElement(
 					RadioOption,
-					{ name: name, value: option.value, key: option.value },
+					{
+						key: option.value,
+						name: name,
+						value: option.value,
+						checked: option.checked,
+						onCheck: onCheck,
+						key: option.value },
 					option.label
 				);
-			}),
-			this.props.other && React.createElement(RadioOtherOption, { name: name, ref: "other" })
-		);
-	}
-});
+			}
+		})
+	);
+}
+
+RadioOptionGroup.propTypes = {
+	other: React.PropTypes.bool,
+	name: React.PropTypes.string.isRequired,
+	options: React.PropTypes.array.isRequired
+};

@@ -13,14 +13,24 @@
 <script src="http://fb.me/react-0.14.2.min.js"></script>
 <script src="http://fb.me/react-dom-0.14.2.min.js"></script>
 
+<script src="../node_modules/hoverboard/dist/hoverboard.min.js"></script>
+
 <script src="Demo.js"></script>
 <script src="RadioOption.js"></script>
 <script src="RadioOtherOption.js"></script>
 <script src="RadioOptionGroup.js"></script>
+<script src="../stores/radioOptions.js"></script>
 
 <script>
-var demo = React.createElement(Demo);
-React.render(demo, document.getElementById('demo'));
+radioOptions.getState(function (options) {
+	ReactDOM.render(
+		React.createElement(Demo, {
+			onCheck: radioOptions.check,
+			options: options
+		}),
+		document.getElementById('demo')
+	);
+});
 </script>
 
 </body>

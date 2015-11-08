@@ -1,12 +1,4 @@
-function Demo() {
-	var radioOptions = [
-		{ value: 'newspaper', label: 'Newspaper' },
-		{ value: 'radio', label: 'Radio' },
-		{ value: 'tv', label: 'Television' },
-		{ value: 'search', label: 'Search Engine' },
-		{ value: 'social', label: 'Social Media' }
-	];
-
+function Demo(props) {
 	return (
 
 		<div className="container">
@@ -17,8 +9,8 @@ function Demo() {
 
 				<RadioOptionGroup
 					name="referrer"
-					other={true}
-					options={radioOptions}
+					options={props.options}
+					onCheck={props.onCheck}
 				/>
 
 				<p><input type="submit"/></p>
